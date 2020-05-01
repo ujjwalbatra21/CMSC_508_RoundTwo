@@ -20,7 +20,7 @@ if($stmt->rowCount() > 0){
     echo "<table>";
     echo "<table style='border: solid 1px black;'>";
     echo "<tr>";
-    echo "<tr><th>ID</th><th>Employee Name</th></tr>";
+   // echo "<tr><th>ID</th><th>Employee Name</th></tr>";
     echo "<tr><th>Name</th><th>Brand</th><th>Condition</th><th>Price</th></tr>";
     echo "</tr>";
     
@@ -31,7 +31,7 @@ if($stmt->rowCount() > 0){
         echo "<td>" . $row['product_name'] . "</td>";
         echo "<td>" . $row['brand'] . "</td>";
         echo "<td>" . $row['product_condition'] . "</td>";
-        echo "<td>" . $row['product_price'] . "</td>";
+        echo "<td>" . $row['price'] . "</td>";
         //echo "<td>" . $row['emp_name'] . "</td>";
         echo "</tr>";
     }
