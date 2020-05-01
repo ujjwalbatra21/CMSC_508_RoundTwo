@@ -26,4 +26,8 @@ if($stmt->rowCount() > 0){
     echo "</table>";
 }
 
+else{
+    echo "<h4> No Employees in the database.</h4>";
+}
+
 ?>
