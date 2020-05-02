@@ -8,9 +8,9 @@
    </head>
    
    <body>
-      <h1>Welcome <?php echo $login_session; ?></h1> 
-      <li> <a href="add_products.php"> Add a Product </a> </li>
-      <h2><a href = "logout.php">Sign Out</a></h2>
+      <h1>Welcome <?php echo $login_session; ?> </h1> 
+      <h3> <a href="add_products.php"> Add a Product </a> </h3>
+      <h2> <a href = "logout.php"> Sign Out </a> </h2>
    </body>
    
 </html>
