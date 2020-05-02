@@ -11,7 +11,7 @@ echo "<td><input type='text' name='customer_name' size='15'></td></tr>";
 echo "<tr><td>Address</td>";
 echo "<td><input type='text' name='customer_address' size='15'></td></tr>";
 echo "<tr><td>Phone Number</td>";
-echo "<td><input type='text' name='phone_number' size='15'></td></tr>";
+echo "<td><input type='text' name='customer_phone' size='15'></td></tr>";
 
 
 // echo "<tr><td>Brand</td>";
@@ -46,12 +46,12 @@ echo "</form>";
 
 if(isset($_POST['submit'])){
     
-    $stmt = $conn->prepare("INSERT INTO customer (customer_name, phone_number, customer_address)
-                            VALUES (:customer_name, :phone_number, :customer_address)");
+    $stmt = $conn->prepare("INSERT INTO customer (customer_name, customer_address, customer_phone)
+                            VALUES (:customer_name, :customer_address, :customer_phone)");
     
     $stmt->bindValue(':customer_name', $_POST['customer_name']);
-    $stmt->bindValue(':phone_number', $_POST['phone_number']);
     $stmt->bindValue(':customer_address', $_POST['customer_address']);
+    $stmt->bindValue(':customer_phone', $_POST['customer_phone']);
 
     
     
