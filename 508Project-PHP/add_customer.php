@@ -28,6 +28,14 @@ if(isset($_POST['submit'])){
     $stmt->execute();
     
     echo "<h4> Registered Successfully! </h4>";  
+   
 }
 
 ?>
+
+<html>
+<body>
+	<ul>
+		<li><a href="index.php"> Go Back to Main Page </a></li>
+	</ul>
+</body>
