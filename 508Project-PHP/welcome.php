@@ -1,1 +1,16 @@
 <?php
+   include('session.php');
+?>
+<html">
+   
+   <head>
+      <title>Welcome </title>
+   </head>
+   
+   <body>
+      <h1>Welcome <?php echo $login_session; ?></h1> 
+      <li> <a href="add_products.php"> Add a Product </a> </li>
+      <h2><a href = "logout.php">Sign Out</a></h2>
+   </body>
+   
+</html>
