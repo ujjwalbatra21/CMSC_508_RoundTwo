@@ -63,6 +63,9 @@ if(isset($_POST['submit'])){
     if($_POST['clothesid'] == ' '){
         $stmt->bindValue(':clothes_id', NULL, PDO::PARAM_STR);
     }
+    
+    $stmt->execute();
+    
     echo "<h4> Data Inserted successfully...!! </h4>";
     
 }
