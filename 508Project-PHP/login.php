@@ -52,9 +52,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 // Check if username exists, if yes then verify password
                 if(mysqli_stmt_num_rows($stmt) == 1){                    
                     // Bind result variables
-                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
+                    mysqli_stmt_bind_result($stmt, $id, $username, $password);
                     if(mysqli_stmt_fetch($stmt)){
-                        //if(password_verify($password, $hashed_password)){
+                        if(password_verify($password, $password)){
                             // Password is correct, so start a new session
                             session_start();
                             
@@ -65,10 +65,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             
                             // Redirect user to welcome page
                             header("location: welcome.php");
-                        //} else{
-                        //    // Display an error message if password is not valid
-                        //    $password_err = "The password you entered was not valid.";
-                        //}
+                        } else{
+                            // Display an error message if password is not valid
+                            $password_err = "The password you entered was not valid.";
+                        }
                     }
                 } else{
                     // Display an error message if username doesn't exist
