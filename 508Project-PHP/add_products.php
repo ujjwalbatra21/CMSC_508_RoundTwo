@@ -16,7 +16,7 @@
     	<tr><td>Brand</td>
     	<td><input type='text' name='brand' size='15'></td></tr>
     	<tr><td>Condition</td>
-	<td><select id='condition'>
+	<td><select name='condition'>
 		<option value='default' selected>Select Condition</option>
   		<option value='new'>New</option>
   		<option value='used'>Used</option>
@@ -28,7 +28,7 @@
 	<tr><td>Type</td>
     	<td><input type='text' name='type' size='15'></td></tr>
 	<tr><td>Gender</td>
-    	<td><select id='gender'>
+    	<td><select name='gender'>
 		<option value='default' selected>Select Gender</option>
   		<option value='male'>Male</option>
   		<option value='female'>Female</option>
