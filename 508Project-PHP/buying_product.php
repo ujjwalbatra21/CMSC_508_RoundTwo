@@ -66,7 +66,7 @@ if(isset($_POST['submit'])){
     if($_POST['payment'] == 'Cash'){
         $stmt->bindValue(':payment', $_POST('[payment]'));
     }
-    if($_POST['payment'] == 'Credit Card'){
+    if($_POST['payment'] == 'CC'){
         $stmt->bindValue(':payment', $_POST('[payment]') + ' ' + $_POST('[type]'));
     }
 
