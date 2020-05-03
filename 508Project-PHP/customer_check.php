@@ -2,19 +2,19 @@
 require_once 'connection.php';
 
 echo "<div align = 'center'>";
-echo "<h3> Enter Customer Phone Number. </h3><br />";
+echo "<h3> Enter Customer Phone Number. </h3><br />";   
 
-echo "<form method='post' action='buying_product.php'>";
+echo "<form method='post' action='customer_check.php'>";
 
 echo "<label>Phone Number: </label>";
-echo "<input type='text' name='customer_phone' size='12'><br />";
+echo "<input type='text' name='phone_number' size='12'><br />";
 echo "<input type='submit' name='submit' value='CHECK'>";
 echo "</form>";
 
 if(isset($_POST['submit'])){
     
-    $phone = $_POST['customer_phone'];
-    $query = $conn->prepare("SELECT * FROM customer WHERE customer_phone=$phone");
+    $phone = $_POST['phone_number'];
+    $query = $conn->prepare("SELECT * FROM customer WHERE customer_phone='$phone'");
     $query->execute();
     $result = $query->fetch();
     
