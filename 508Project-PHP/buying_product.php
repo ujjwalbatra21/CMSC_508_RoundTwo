@@ -67,7 +67,9 @@ if(isset($_POST['submit'])){
         $stmt->bindValue(':payment', 'CASH');
     }
     if($_POST['payment'] == 2){
-        $stmt->bindValue(':payment', 'CC'.$_POST('[type]'));
+        $str1 = "CC";
+        $str2 = $_POST('[type]');
+        $stmt->bindValue(':payment', $str1.$str2);
     }
     
     $stmt->bindValue(':date', $_POST['transaction_date']);
