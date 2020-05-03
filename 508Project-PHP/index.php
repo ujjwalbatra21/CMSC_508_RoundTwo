@@ -7,5 +7,6 @@
 <li> <a href="list_products.php"> Products Available </a> </li>
 <li> <a href="add_customer.php"> Register as a Customer </a> </li>
 <li> <a href="login.php"> Employee Login </a> </li>
+<li> <a href="buying_product.php"> Purchase Products </a> </li>
 </ul>
 </body>
