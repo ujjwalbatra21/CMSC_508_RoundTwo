@@ -68,7 +68,7 @@ if(isset($_POST['submit'])){
     }
     if($_POST['payment'] == 2){
         $str1 = "CC";
-        $str2 = $_POST('[type]');
+        $str2 = $_POST(['type']);
         $stmt->bindValue(':payment', $str1.$str2);
     }
     
