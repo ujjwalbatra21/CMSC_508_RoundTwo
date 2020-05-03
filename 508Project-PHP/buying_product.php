@@ -32,7 +32,7 @@ echo "<tbody>";
     echo "<td><input type='date' name='transaction_date'></td></tr>";
     
     echo "<tr><td>Product Name</td>";
-    $stmt = $conn->prepare("SELECT productID, product_name FROM product");
+    $stmt = $conn->prepare("SELECT productID, product_name FROM product WHERE in_stock='In Stock' ");
     $stmt->execute();
     echo "<td><select name='product'>";
     echo "<option value='-1'>No Product</option>";
@@ -74,12 +74,20 @@ if(isset($_POST['submit'])){
     }
     
     $stmt->bindValue(':date', $_POST['transaction_date']);
+    
     if($_POST['product'] != -1){
         $stmt->bindValue(':product', $_POST['product']);
     }
-    $stmt->bindValue(':customer_phone', $_POST['customer_phone']);
     
+    $stmt->bindValue(':customer_phone', $_POST['customer_phone']);
     $stmt->execute();
+    
+    $product_id = $_POST['product'];
+    $stmt = $conn->prepare("UPDATE product SET in_stock='Sold' WHERE productID=:product_id");
+    $stmt->bindValue(':product_id', $product_id);
+    $stmt->execute();
+    
+    echo "Success! Customer and Transaction added.";
 }
 
 ?>
