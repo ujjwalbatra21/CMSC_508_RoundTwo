@@ -12,7 +12,7 @@ table, th, td {
 
 require_once 'connection.php';
 
-$stmt = $conn->prepare("SELECT product_name, brand, product_condition, price FROM product");
+$stmt = $conn->prepare("SELECT product_name, brand, product_condition, price, in_stock FROM product");
 $stmt->execute();
 
 
@@ -20,8 +20,7 @@ if($stmt->rowCount() > 0){
     echo "<table>";
     echo "<table style='border: solid 1px black;'>";
     echo "<tr>";
-   // echo "<tr><th>ID</th><th>Employee Name</th></tr>";
-    echo "<tr><th>Name</th><th>Brand</th><th>Condition</th><th>Price</th></tr>";
+    echo "<tr><th>Name</th><th>Brand</th><th>Condition</th><th>Price</th><th>In Stock</th></tr>";
     echo "</tr>";
     
     echo "<tbody>";
@@ -32,7 +31,7 @@ if($stmt->rowCount() > 0){
         echo "<td>" . $row['brand'] . "</td>";
         echo "<td>" . $row['product_condition'] . "</td>";
         echo "<td>" . $row['price'] . "</td>";
-        //echo "<td>" . $row['emp_name'] . "</td>";
+        echo "<td>" . $row['in_stock'] . "</td>";
         echo "</tr>";
     }
     
