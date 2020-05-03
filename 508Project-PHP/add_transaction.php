@@ -77,8 +77,16 @@ if(isset($_POST['submit'])){
     $stmt->execute();
     
     echo "<div align = 'center'>";
-    echo "<h4>Success! Transaction added to database.<h4>";
+    echo "<h4>Success! Transaction added to database.<h4><br />";
     echo "</div>";
 }
 
 ?>
+
+<html>
+<body>
+<div align = "center">
+	<a href="index.php"> Go Back to Main Page </a>
+</div>
+</body>
+</html>
