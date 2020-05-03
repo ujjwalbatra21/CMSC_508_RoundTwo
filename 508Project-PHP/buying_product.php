@@ -17,9 +17,9 @@ echo "<tbody>";
     
     echo "<tr><td>Payment Method</td>";
     echo "<td><select name='payment'>";
-    echo "<option value='No Payment' selected>No Payment/option>";
-    echo "<option value='Cash'>Cash</option>";
-    echo "<option value='CC'>Credit Card</option>";
+    echo "<option value='0' selected>No Payment/option>";
+    echo "<option value='1'>Cash</option>";
+    echo "<option value='2'>Credit Card</option>";
     echo "</select></td>";
     echo "<td><select name='type'>";
     echo "<option value='No Type' selected>No Type</option>";
@@ -63,11 +63,11 @@ if(isset($_POST['submit'])){
     $stmt = $conn->prepare("INSERT INTO transaction (payment_method, date, productID, customer_phone)
                             VALUES (:payment, :date, :product, :customer_phone)");
     
-    if($_POST['payment'] == 'Cash'){
-        $stmt->bindValue(':payment', $_POST('[payment]'));
+    if($_POST['payment'] == 1){
+        $stmt->bindValue(':payment', 'CASH');
     }
-    if($_POST['payment'] == 'CC'){
-        $stmt->bindValue(':payment', $_POST('[payment]') + ' ' + $_POST('[type]'));
+    if($_POST['payment'] == 2){
+        $stmt->bindValue(':payment', 'CC' + ' ' + $_POST('[type]'));
     }
 
     $stmt->bindValue(':date', $_POST['transaction_date']);
