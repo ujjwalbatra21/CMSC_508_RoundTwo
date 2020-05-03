@@ -17,7 +17,7 @@ echo "<tbody>";
     
     echo "<tr><td>Payment Method</td>";
     echo "<td><select name='payment'>";
-    echo "<option value='0' selected>No Payment/option>";
+    echo "<option value='0' selected>No Payment</option>";
     echo "<option value='1'>Cash</option>";
     echo "<option value='2'>Credit Card</option>";
     echo "</select></td>";
@@ -88,7 +88,9 @@ if(isset($_POST['submit'])){
     //$stmt->bindValue(':product_id', $product_id);
     $stmt->execute();
     
-    echo "<h4>Success! Customer and Transaction added.<>";
+    echo "<div align = 'center'>";
+    echo "<h4>Success! Customer and Transaction added.<h4>";
+    echo "</div>";
 }
 
 ?>
