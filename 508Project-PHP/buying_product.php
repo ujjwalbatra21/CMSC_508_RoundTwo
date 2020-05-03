@@ -67,7 +67,7 @@ if(isset($_POST['submit'])){
         $stmt->bindValue(':payment', 'CASH');
     }
     if($_POST['payment'] == 2){
-        $str1 = "CC";
+        $str1 = 'CC';
         $str2 = $str1.$_POST(['type']);
         $stmt->bindValue(':payment', $str2, PDO::PARAM_STR);
     }
