@@ -69,7 +69,7 @@ if(isset($_POST['submit'])){
     if($_POST['payment'] == 2){
         $str1 = "CC";
         $str2 = $str1.$_POST(['type']);
-        $stmt->bindValue(':payment', $str2);
+        $stmt->bindValue(':payment', $str2, PDO::PARAM_STR);
     }
     
     $stmt->bindValue(':date', $_POST['transaction_date']);
