@@ -32,8 +32,8 @@ echo "<tbody>";
     echo "<td><input type='date' name='transaction_date'></td></tr>";
     
     echo "<tr><td>Product Name</td>";
-    $in_stock = 'In Stock';
-    $stmt = $conn->prepare("SELECT productID, product_name FROM product WHERE in_stock=$in_stock");
+    //$in_stock = 'In Stock';
+    $stmt = $conn->prepare("SELECT productID, product_name FROM product WHERE in_stock='In Stock'");
     $stmt->execute();
     echo "<td><select name='product'>";
     echo "<option value='-1'>No Product</option>";
