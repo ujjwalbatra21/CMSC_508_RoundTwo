@@ -63,10 +63,10 @@ if(isset($_POST['submit'])){
     $stmt = $conn->prepare("INSERT INTO transaction (payment_method, date, productID, customer_phone)
                             VALUES (:payment, :date, :product, :customer_phone)");
     
-    if($_POST['payment'] = 'Cash'){
+    if($_POST['payment'] == 'Cash'){
         $stmt->bindValue(':payment', $_POST('[payment]'));
     }
-    if($_POST['payment'] = 'Credit Card'){
+    if($_POST['payment'] == 'Credit Card'){
         $stmt->bindValue(':payment', $_POST('[payment]') + ' ' + $_POST('[type]'));
     }
 
