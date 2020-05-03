@@ -8,10 +8,11 @@ echo "<form method='post' action='buying_product.php'>";
 
 echo "<label>Phone Number: </label>";
 echo "<input type='text' name='customer_phone' size='12'>";
-
+echo "<input type='submit' name='submit' value='CHECK'>";
 echo "</form>";
 
-
+if(isset($_POST['submit'])){
+    
 $phone = $_POST['customer_phone'];
 $query = "SELECT * FROM customer WHERE customer_phone=$phone";
 $query->execute();
@@ -25,4 +26,5 @@ else{
 }
 
 echo "</div>";
+}
 ?>
