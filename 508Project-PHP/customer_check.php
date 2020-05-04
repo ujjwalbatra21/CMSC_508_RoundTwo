@@ -21,7 +21,7 @@ if(isset($_POST['submit'])){
     if($result){
         echo "<h4 style='color:green;'><b> Customer already Exits</b></h4><br />";
         echo "<h4> Do you want to make any transaction? Click 'Make Transaction'.</h4><br />";
-        echo "<a href='add_transaction.php'> Make Transaction </a>";
+        echo "<a href='add_transaction.php'> Make Transaction </a><br />";
     }
     else{
         echo "<h4 style='color:red;'><b> Customer does not Exits</b></h4><br />";
