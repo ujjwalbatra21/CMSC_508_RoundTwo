@@ -1,4 +1,6 @@
-<?php
+<?php 
+
+require_once 'connection.php';
 
 echo "<div align = 'center'>";
 echo "<h3> Delete a Record. </h3><br />";
@@ -21,15 +23,11 @@ echo "<input type='submit' name='submit' value='SELECT'></td></tr>";
 echo "</form>";
 echo "</div>";
 
-if (isset($_POST['submit'])){
-    if($_POST['employee'] == 'Employee'){
-        header("Location:https://www.formget.com/how-to-redirect-a-url-php-form/"); 
-    }
-}
-/*if(isset($_POST['submit'])){
+
+if(isset($_POST['submit'])){
     if(isset($_POST['product']))
     {
-        echo "<form method='post' action='add_transaction.php'>";
+        echo "<form method='post' action='list_products.php'>";
         echo "<table>";
         echo "<tbody>";
         echo "<tr><td>Select Product Name: </td>";
@@ -67,5 +65,5 @@ if (isset($_POST['submit'])){
     {
         echo "You have selected :".$_POST['employee'];
     }
-}*/
+}
 ?>
