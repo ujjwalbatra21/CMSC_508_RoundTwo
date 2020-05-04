@@ -1,7 +1,7 @@
 <?php
 require_once 'connection.php';
 
-
+echo "<div align='center'>";
 echo "<h3> Add a Product </h3><br />";
 echo "<form method='post' action='add_products.php'>";
 echo "<table style='border: solid 1px black;'>";
@@ -87,8 +87,8 @@ echo "<tbody>";
         echo "<tr><td>In Stock</td>";
         echo "<td><select name='instock'>";
         echo "<option value='-1' selected>No Selected</option>";
-        echo "<option value='Yes'>Yes</option>";
-        echo "<option value='No'>No</option>";
+        echo "<option value='In Stock'>Yes</option>";
+        echo "<option value='Sold'>No</option>";
         echo "</select></td></tr>";
         
         echo "<tr><td> <br /> </td></tr>";
@@ -99,7 +99,6 @@ echo "</table>";
 echo "</form>";
 
 
-
 if(isset($_POST['submit'])){
     
     $stmt = $conn->prepare("INSERT INTO product (product_name, shoeID, shoe_size, clothesID, clothes_size, brand, colorway, type, gender, product_condition, price, in_stock) 
@@ -107,7 +106,7 @@ if(isset($_POST['submit'])){
     
     $stmt->bindValue(':product_name', $_POST['productname']);
     
-    if($_POST['shoeid'] == ' '){
+    if(empty($_POST['shoeid'])){
         $stmt->bindValue(':shoe_id', NULL, PDO::PARAM_STR);
     }
     else{
@@ -121,7 +120,7 @@ if(isset($_POST['submit'])){
         $stmt->bindValue(':shoe_size', $_POST['shoesize']);
     }
     
-    if($_POST['clothesid'] == ' '){
+    if(empty($_POST['clothesid'])){
         $stmt->bindValue(':clothes_id', NULL, PDO::PARAM_STR);
     }
     else{
@@ -169,6 +168,7 @@ if(isset($_POST['submit'])){
     
 }
 
+echo"</div>";
 ?>
 
 <html>
