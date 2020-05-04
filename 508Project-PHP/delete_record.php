@@ -44,7 +44,9 @@ if(isset($_POST['submit'])){
         echo "</table>";
         echo "</form>";
     }
-    if(isset($_POST['go_product'])){
+}
+    
+if(isset($_POST['go_product'])){
             $product = $_POST['productname'];
             if($product != -1){
                 $stmt = $conn->prepare("DELETE FROM product WHERE productID='$product'");
@@ -53,10 +55,9 @@ if(isset($_POST['submit'])){
             else{
                 echo "<h5 style='color:red;'>No product selected</h5>";
             }
-     }
 
-    
-    if(isset($_POST['transaction']))
+}
+    /*if(isset($_POST['transaction']))
     {
         echo "You have selected :".$_POST['transaction'];
     }
@@ -64,6 +65,6 @@ if(isset($_POST['submit'])){
     if(isset($_POST['employee']))
     {
         echo "You have selected :".$_POST['employee'];
-    }
-}
+    }*/
+
 ?>
