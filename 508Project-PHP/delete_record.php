@@ -9,13 +9,13 @@ echo "<form method='post' action='delete_record.php'>";
 
 echo "<h4> Please select what record you want to delete:</h4> <br />";
 
-echo "<input type='radio' name='product' value='Product' onclick='list_products.php'>";
+echo "<input type='radio' name='product' value='Product' onclick='location.href=list_products.php'>";
 echo "<label> Product </label>";
 
 echo "<input type='radio' name='transaction' value='Transaction'>";
 echo "<label> Transaction </label>";
 
-echo "<input type='radio' name='employee' value='Employee'>";
+echo "<a href='list_employees.php'> <input type='radio' name='employee' value='Employee'> </a>";
 echo "<label> Employee </label><br>";
 
 echo "<input type='submit' name='submit' value='SELECT'></td></tr>";
