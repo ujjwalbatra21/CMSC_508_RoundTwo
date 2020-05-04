@@ -27,13 +27,13 @@ echo "</div>";
 if(isset($_POST['submit'])){
     if(isset($_POST['product']))
     {
-        echo "<form method='post' action='list_products.php'>";
+        echo "<form method='post'>";
         echo "<table>";
         echo "<tbody>";
         echo "<tr><td>Select Product Name: </td>";
         $stmt = $conn->prepare("SELECT productID, product_name, in_stock FROM product");
         $stmt->execute();
-        echo "<td><select name='product'>";
+        echo "<td><select name='product' onchange='this.form.submit();'>";
         echo "<option value='-1'>No Product</option>";
         while($row = $stmt->fetch()){
             echo "<option value='$row[productID]'>$row[product_name] $row[in_stock]</option>";
@@ -43,8 +43,8 @@ if(isset($_POST['submit'])){
         echo "</tbody>";
         echo "</table>";
         echo "</form>";
-        
-        if(isset($_POST['go_product'])){
+    }
+    else{
             $product = $_POST['product'];
             if($product != -1){
                 $stmt = $conn->prepare("DELETE FROM product WHERE productID=$product");
@@ -53,8 +53,8 @@ if(isset($_POST['submit'])){
             else{
                 echo "<h5 style='color:red;'>No product selected</h5>";
             }
-        }
-    }
+     }
+
     
     if(isset($_POST['transaction']))
     {
