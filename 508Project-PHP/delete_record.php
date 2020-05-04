@@ -5,7 +5,7 @@ require_once 'connection.php';
 echo "<div align = 'center'>";
 echo "<h3> Delete a Record. </h3><br />";
 
-echo "<form method='post' action='delete_product.php'>";
+echo "<form method='post' action='delete_record.php'>";
 
 echo "<h4> Please select what record you want to delete:</h4> <br />";
 
