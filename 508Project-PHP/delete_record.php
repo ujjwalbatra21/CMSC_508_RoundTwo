@@ -22,8 +22,8 @@ echo "</form>";
 echo "</div>";
 
 if (isset($_POST['submit'])){
-    if($_POST['employee'] != ' '){
-        header("Location: list_employees.php"); 
+    if($_POST['employee'] == 'Employee'){
+        header("Location:list_products.php"); 
     }
 }
 /*if(isset($_POST['submit'])){
