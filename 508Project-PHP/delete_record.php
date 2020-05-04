@@ -33,7 +33,7 @@ if(isset($_POST['submit'])){
         echo "<tr><td>Select Product Name: </td>";
         $stmt = $conn->prepare("SELECT productID, product_name, in_stock FROM product");
         $stmt->execute();
-        echo "<td><select name='product' onchange='this.form.submit();'>";
+        echo "<td><select name='productname'>";
         echo "<option value='-1'>No Product</option>";
         while($row = $stmt->fetch()){
             echo "<option value='$row[productID]'>$row[product_name] $row[in_stock]</option>";
@@ -45,7 +45,7 @@ if(isset($_POST['submit'])){
         echo "</form>";
     }
     if(isset($_POST['go_product'])){
-            $product = $_POST['product'];
+            $product = $_POST['productname'];
             if($product != -1){
                 $stmt = $conn->prepare("DELETE FROM product WHERE productID='$product'");
                 $stmt->execute();
