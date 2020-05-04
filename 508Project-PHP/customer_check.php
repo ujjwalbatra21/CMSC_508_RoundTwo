@@ -36,6 +36,7 @@ echo "</div>";
 <html>
 <body>
 <div align = "center">
+	<br />
 	<a href="index.php"> Go Back to Main Page </a>
 </div>
 </body>
