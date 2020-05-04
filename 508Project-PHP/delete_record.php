@@ -23,7 +23,7 @@ echo "</div>";
 
 if (isset($_POST['submit'])){
     if($_POST['employee'] == 'Employee'){
-        header("Location:list_products.php"); 
+        header("Location:https://www.formget.com/how-to-redirect-a-url-php-form/"); 
     }
 }
 /*if(isset($_POST['submit'])){
