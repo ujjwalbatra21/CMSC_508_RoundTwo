@@ -9,11 +9,11 @@ echo "<form method='post' action='delete_record.php'>";
 
 echo "<h4> Please select what record you want to delete:</h4> <br />";
 
-echo "<input type='radio' name='product' value='Product'>";
-echo "<label> Product </label><br>";
+echo "<input type='radio' name='product' value='Product' onclick='list_products.php'>";
+echo "<label> Product </label>";
 
 echo "<input type='radio' name='transaction' value='Transaction'>";
-echo "<label> Transaction </label><br>";
+echo "<label> Transaction </label>";
 
 echo "<input type='radio' name='employee' value='Employee'>";
 echo "<label> Employee </label><br>";
@@ -24,7 +24,7 @@ echo "</form>";
 echo "</div>";
 
 
-if(isset($_POST['submit'])){
+/*if(isset($_POST['submit'])){
     if(isset($_POST['product']))
     {
         echo "<form method='post' action='add_transaction.php'>";
@@ -65,5 +65,5 @@ if(isset($_POST['submit'])){
     {
         echo "You have selected :".$_POST['employee'];
     }
-}
+}*/
 ?>
