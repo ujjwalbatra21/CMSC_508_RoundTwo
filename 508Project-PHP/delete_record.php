@@ -1,21 +1,19 @@
 <?php
 
-require_once 'connection.php';
-
 echo "<div align = 'center'>";
-echo "<h3> Purchase a Product. </h3><br />";
+echo "<h3> Delete a Record. </h3><br />";
 
-echo "<form method='post' action='delete_record.php'>";
+echo "<form method='post' action='delete_product.php'>";
 
 echo "<h4> Please select what record you want to delete:</h4> <br />";
 
-echo "<input type='radio' name='product' value='Product' onclick='location.href=list_products.php'>";
+echo "<input type='radio' name='product' value='Product'>";
 echo "<label> Product </label>";
 
 echo "<input type='radio' name='transaction' value='Transaction'>";
 echo "<label> Transaction </label>";
 
-echo "<a href='list_employees.php'> <input type='radio' name='employee' value='Employee'> </a>";
+echo "<input type='radio' name='employee' value='Employee'>";
 echo "<label> Employee </label><br>";
 
 echo "<input type='submit' name='submit' value='SELECT'></td></tr>";
@@ -23,7 +21,11 @@ echo "<input type='submit' name='submit' value='SELECT'></td></tr>";
 echo "</form>";
 echo "</div>";
 
-
+if (isset($_POST['submit'])){
+    if(isset($_POST['employee'])){
+        header("Location: list_employees.php"); 
+    }
+}
 /*if(isset($_POST['submit'])){
     if(isset($_POST['product']))
     {
