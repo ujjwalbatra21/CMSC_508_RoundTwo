@@ -22,7 +22,7 @@ echo "</form>";
 echo "</div>";
 
 if (isset($_POST['submit'])){
-    if(isset($_POST['employee'])){
+    if($_POST['employee'] != ' '){
         header("Location: list_employees.php"); 
     }
 }
