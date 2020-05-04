@@ -25,7 +25,7 @@ echo "</div>";
 
 
 if(isset($_POST['submit'])){
-    if(isset($_POST['product']))
+    if(!empty($_POST['product']))
     {
         echo "<form method='post'>";
         echo "<table>";
@@ -44,10 +44,10 @@ if(isset($_POST['submit'])){
         echo "</table>";
         echo "</form>";
     }
-    else{
+    if(isset($_POST['go_product'])){
             $product = $_POST['product'];
             if($product != -1){
-                $stmt = $conn->prepare("DELETE FROM product WHERE productID=$product");
+                $stmt = $conn->prepare("DELETE FROM product WHERE productID='$product'");
                 $stmt->execute();
             }
             else{
